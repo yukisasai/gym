@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="実写差し替え" preserveAspectRatio="xMidYMid slice">
+<defs></defs>
+
+  <rect width="1000" height="750" fill="#0D0F12"/>
+  <rect x="22.5" y="22.5" width="955" height="705"
+        fill="none" stroke="#E8392B" stroke-width="3.75" stroke-dasharray="22.5 15" opacity=".6"/>
+  <circle cx="500" cy="307.5" r="82.5" fill="#F2F0EB" opacity=".16"/>
+  <path d="M 350 525 a 150 135 0 0 1 300 0 z" fill="#F2F0EB" opacity=".16"/>
+  <text x="500" y="607.5" text-anchor="middle" font-family="'Hiragino Sans',sans-serif"
+        font-size="39" font-weight="600" fill="#F2F0EB" fill-opacity=".55">実写差し替え</text>
+  <text x="500" y="660" text-anchor="middle" font-family="'Hiragino Sans',sans-serif"
+        font-size="28.5" fill="#F2F0EB" fill-opacity=".38">リング全景</text>
+  <text x="500" y="720" text-anchor="middle" font-family="'Jost',sans-serif"
+        font-size="25.500000000000004" letter-spacing="10.5" fill="#F2F0EB" fill-opacity=".3">1000 × 750</text>
+</svg>

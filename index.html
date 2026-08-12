@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>体験1,000円｜拳心ボクシングジム 尼崎</title>
+<meta name="description" content="未経験・運動ぎらい歓迎。3ラウンド9分から始めるボクシングジム。体験1,000円、手ぶらでOK。尼崎駅徒歩5分・朝6時から24時まで。">
+<meta name="robots" content="noindex,nofollow">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0D0F12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="体験1,000円｜拳心ボクシングジム 尼崎">
+<meta property="og:image" content="./images/og.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════════
+   拳心 KENSHIN BOXING — 尼崎
+   ──────────────────────────────────────────────────────────────
+   01(明朝・白磁)02(丸ゴシック・乳白)がどちらも淡色だったので、
+   本案は黒地・高彩度・詰め組みへ全振りする。
+     骨格 : Anton + Barlow Condensed。横幅を詰めて圧をかける。
+            和文は Noto Sans JP 900。字間をマイナスにして塊にする。
+     色   : 黒地に炎(#E8392B → #F2703A)。中間色をほぼ置かない。
+     余白 : 詰める。行間1.7。ここだけは他2本と逆の設計。
+     signature : 3分/1分のラウンドタイマー。押すと実際に動き、
+                 「9分ならできそう」を体感させる。ジムLPの本質は
+                 効能の説明ではなく、心理的ハードルの解除にある。
+   ══════════════════════════════════════════════════════════════ */
+
+:root{
+  --black:#0D0F12;
+  --smoke:#171B21;
+  --steel:#232A33;
+  --steel-2:#3A4756;
+  --paper:#F2F0EB;
+  --paper-2:#9AA3AD;
+  --red:#E8392B;
+  --ember:#F2703A;
+  --line:rgba(242,240,235,.12);
+
+  --f-disp:'Anton',sans-serif;
+  --f-cond:'Barlow Condensed',sans-serif;
+  --f-ja:'Noto Sans JP',system-ui,sans-serif;
+
+  --fs-hero:clamp(2.5rem,12vw,5.5rem);
+  --fs-h2:clamp(1.6rem,6.5vw,2.6rem);
+  --fs-h3:clamp(1.05rem,4vw,1.35rem);
+  --fs-lead:clamp(.9375rem,3.6vw,1.0625rem);
+  --fs-sm:.8125rem;
+  --fs-xs:.6875rem;
+
+  --gut:1.25rem;
+  --sect:clamp(3.5rem,11vw,6rem);
+  --well:660px;
+  --wide:1100px;
+  --bar:76px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--black);color:var(--paper);
+  font-family:var(--f-ja);font-size:.9375rem;font-weight:500;line-height:1.75;
+  padding-bottom:var(--bar);-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+.sect{padding:var(--sect) var(--gut)}
+.sect--smoke{background:var(--smoke)}
+.sect--paper{background:var(--paper);color:var(--black)}
+.well{max-width:var(--well);margin-inline:auto}
+.wide{max-width:var(--wide);margin-inline:auto}
+
+.eyebrow{
+  font-family:var(--f-cond);font-size:.8125rem;font-weight:700;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--red);margin:0 0 .6rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.eyebrow::before{content:'';width:26px;height:3px;background:var(--red)}
+.sect--paper .eyebrow{color:var(--red)}
+
+.h2{
+  font-family:var(--f-ja);font-weight:900;font-size:var(--fs-h2);
+  line-height:1.34;letter-spacing:-.02em;margin:0 0 .85rem;
+}
+.h2 em{font-style:normal;color:var(--ember)}
+.lead{font-size:var(--fs-lead);color:var(--paper-2);margin:0 0 2.25rem;line-height:1.85}
+.sect--paper .lead{color:#5A6069}
+.fine{font-size:var(--fs-sm);line-height:1.8;color:var(--paper-2);opacity:.8;margin:1.5rem 0 0}
+.sect--paper .fine{color:#5A6069}
+
+/* ── CTA : 角ゼロ・斜めのハイライトで殴る印象 ── */
+.btn{
+  position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.05rem;width:100%;min-height:66px;padding:.85rem 1.5rem;border:0;border-radius:0;
+  background:var(--red);color:#fff;font-family:var(--f-ja);font-weight:900;
+  font-size:1.0625rem;letter-spacing:.02em;text-decoration:none;cursor:pointer;overflow:hidden;
+  clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%);
+  transition:background .16s ease,transform .12s ease;
+}
+.btn::after{
+  content:'';position:absolute;inset:0;left:-60%;width:40%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
+  transform:skewX(-20deg);transition:left .5s ease;
+}
+.btn:hover{background:var(--ember)}
+.btn:hover::after{left:130%}
+.btn:active{transform:translateY(2px)}
+.btn small{font-family:var(--f-cond);font-size:.75rem;font-weight:600;letter-spacing:.14em;opacity:.92}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+
+/* ── ヘッダー ── */
+.hd{display:flex;align-items:center;justify-content:space-between;padding:.9rem var(--gut);border-bottom:1px solid var(--line)}
+.hd__l{display:flex;align-items:baseline;gap:.5rem}
+.hd__ja{font-family:var(--f-ja);font-weight:900;font-size:1.15rem;letter-spacing:.08em}
+.hd__en{font-family:var(--f-cond);font-size:.625rem;font-weight:600;letter-spacing:.2em;color:var(--paper-2)}
+.hd__t{font-family:var(--f-cond);font-size:.75rem;font-weight:600;letter-spacing:.14em;color:var(--ember);text-align:right;line-height:1.4}
+
+/* ── ヒーロー ── */
+.hero{position:relative;min-height:78svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero__bg{position:absolute;inset:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover}
+.hero__bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,15,18,.45) 0%,rgba(13,15,18,.2) 40%,var(--black) 96%)}
+.hero__in{position:relative;padding:3rem var(--gut) 2.5rem;width:100%}
+.hero__kick{
+  display:inline-block;background:var(--red);color:#fff;font-family:var(--f-cond);
+  font-size:.8125rem;font-weight:700;letter-spacing:.16em;padding:.3rem .8rem;margin-bottom:1rem;
+}
+.hero__ttl{
+  font-family:var(--f-disp);font-size:var(--fs-hero);line-height:.94;
+  letter-spacing:.005em;margin:0 0 .5rem;text-transform:uppercase;
+}
+.hero__ttl span{display:block;color:var(--ember)}
+.hero__ja{font-family:var(--f-ja);font-weight:900;font-size:clamp(1.15rem,5vw,1.9rem);letter-spacing:-.02em;line-height:1.4;margin:0 0 1rem}
+.hero__sub{font-size:var(--fs-lead);color:var(--paper-2);margin:0 0 1.75rem;max-width:30em}
+.hero__stats{display:flex;gap:1.5rem;padding:0;margin:0 0 1.75rem;list-style:none;flex-wrap:wrap}
+.hero__stats li{border-left:3px solid var(--red);padding-left:.7rem}
+.hero__stats b{display:block;font-family:var(--f-cond);font-size:2rem;font-weight:700;line-height:1;letter-spacing:.01em}
+.hero__stats b i{font-style:normal;font-family:var(--f-ja);font-size:.8125rem;font-weight:700;margin-left:.15em}
+.hero__stats span{font-family:var(--f-cond);font-size:.6875rem;font-weight:600;letter-spacing:.14em;color:var(--paper-2)}
+.hero__cta{max-width:420px}
+@media(min-width:900px){
+  .hero{min-height:88svh}
+  .hero__in{max-width:var(--wide);margin-inline:auto;padding-block:4rem 3.5rem}
+  .hero__ttl{max-width:14ch}
+}
+
+/* ══ シグネチャー : ラウンドタイマー ══ */
+.timer{
+  background:var(--smoke);border:1px solid var(--line);padding:1.75rem 1.35rem;
+  display:grid;gap:1.25rem;justify-items:center;text-align:center;
+}
+.timer__dial{position:relative;width:196px;height:196px}
+.timer__dial svg{width:100%;height:100%;transform:rotate(-90deg)}
+.timer__track{fill:none;stroke:var(--steel);stroke-width:9}
+.timer__prog{fill:none;stroke:var(--red);stroke-width:9;stroke-linecap:butt;transition:stroke-dashoffset .25s linear,stroke .3s ease}
+.timer__prog[data-phase="rest"]{stroke:var(--steel-2)}
+.timer__mid{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:.1rem}
+.timer__ph{font-family:var(--f-cond);font-size:.6875rem;font-weight:700;letter-spacing:.22em;color:var(--red)}
+.timer__ph[data-phase="rest"]{color:var(--paper-2)}
+.timer__num{font-family:var(--f-cond);font-size:3.4rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.timer__rd{font-family:var(--f-cond);font-size:.6875rem;font-weight:600;letter-spacing:.18em;color:var(--paper-2)}
+.timer__btn{
+  background:transparent;border:2px solid var(--red);color:var(--paper);
+  font-family:var(--f-cond);font-size:.875rem;font-weight:700;letter-spacing:.18em;
+  padding:.65rem 2rem;cursor:pointer;text-transform:uppercase;
+  transition:background .16s ease,color .16s ease;
+}
+.timer__btn:hover{background:var(--red);color:#fff}
+.timer__cap{font-size:var(--fs-sm);color:var(--paper-2);margin:0;max-width:30em;line-height:1.85}
+.timer__dots{display:flex;gap:.4rem}
+.timer__dots i{width:9px;height:9px;background:var(--steel);display:block}
+.timer__dots i[data-on="true"]{background:var(--red)}
+
+/* ── 不安の解除 ── */
+.fears{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.fear{background:var(--black);padding:1.35rem 1.25rem;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start}
+.fear__no{font-family:var(--f-cond);font-size:1.5rem;font-weight:700;color:var(--red);line-height:1}
+.fear__q{font-weight:900;margin:0 0 .35rem;font-size:.9375rem;letter-spacing:-.01em}
+.fear__a{margin:0;font-size:var(--fs-sm);color:var(--paper-2);line-height:1.85}
+@media(min-width:760px){.fears{grid-template-columns:1fr 1fr}}
+
+/* ── 料金 ── */
+.plans{display:grid;gap:1px;background:rgba(13,15,18,.14);padding:0;margin:0 0 1.25rem;list-style:none}
+.plan{background:var(--paper);padding:1.6rem 1.35rem;position:relative}
+.plan--on{background:var(--black);color:var(--paper)}
+.plan__flag{position:absolute;top:0;right:0;background:var(--red);color:#fff;font-family:var(--f-cond);font-size:.6875rem;font-weight:700;letter-spacing:.14em;padding:.25rem .7rem}
+.plan__n{font-weight:900;font-size:var(--fs-h3);margin:0 0 .2rem;letter-spacing:-.01em}
+.plan__d{font-size:var(--fs-sm);opacity:.7;margin:0 0 .9rem}
+.plan__p{display:flex;align-items:baseline;gap:.25rem;font-family:var(--f-cond);font-size:2.6rem;font-weight:700;line-height:1;margin:0 0 1rem}
+.plan__p i{font-style:normal;font-family:var(--f-ja);font-size:.8125rem;font-weight:700;opacity:.7}
+.plan__f{padding:0;margin:0;list-style:none;display:grid;gap:.4rem;font-size:var(--fs-sm)}
+.plan__f li{display:grid;grid-template-columns:15px 1fr;gap:.5rem;opacity:.78}
+.plan__f li::before{content:'';margin-top:.5em;width:10px;height:6px;border-left:2px solid var(--red);border-bottom:2px solid var(--red);transform:rotate(-45deg)}
+@media(min-width:820px){.plans{grid-template-columns:repeat(3,1fr);align-items:stretch}}
+
+/* ── トレーナー ── */
+.coaches{display:grid;gap:1.5rem;padding:0;margin:0;list-style:none}
+.coach__pic{aspect-ratio:4/5;overflow:hidden;margin-bottom:.9rem;background:var(--smoke)}
+.coach__pic img{width:100%;height:100%;object-fit:cover}
+.coach__n{font-weight:900;font-size:var(--fs-h3);margin:0 0 .15rem}
+.coach__n span{display:block;font-family:var(--f-cond);font-size:.625rem;font-weight:600;letter-spacing:.2em;color:var(--red);margin-top:.2rem}
+.coach__r{font-size:var(--fs-sm);color:var(--paper-2);margin:0 0 .6rem}
+.coach__b{margin:0;font-size:var(--fs-sm);color:var(--paper-2);line-height:1.85}
+@media(min-width:760px){.coaches{grid-template-columns:1fr 1fr;gap:2rem}}
+
+/* ── 声 ── */
+.voices{display:grid;gap:1rem;padding:0;margin:0;list-style:none}
+.voice{background:var(--smoke);border-left:3px solid var(--red);padding:1.35rem 1.25rem}
+.voice__top{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.voice__av{width:44px;height:44px;overflow:hidden;flex:none}
+.voice__nm{font-weight:900;font-size:.875rem;margin:0}
+.voice__ag{font-family:var(--f-cond);font-size:.6875rem;letter-spacing:.1em;color:var(--paper-2);margin:0}
+.voice__h{font-weight:900;color:var(--ember);margin:0 0 .35rem;font-size:.9375rem}
+.voice__b{margin:0;font-size:var(--fs-sm);color:var(--paper-2);line-height:1.85}
+@media(min-width:820px){.voices{grid-template-columns:repeat(3,1fr)}}
+
+/* ── FAQ ── */
+.faq{border-top:1px solid rgba(13,15,18,.14)}
+.faq details{border-bottom:1px solid rgba(13,15,18,.14)}
+.faq summary{display:grid;grid-template-columns:1.5rem 1fr 15px;align-items:start;gap:.75rem;padding:1.15rem 0;font-weight:900;font-size:.9375rem;line-height:1.7;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:'Q';font-family:var(--f-cond);font-size:1.2rem;font-weight:700;color:var(--red);line-height:1.4}
+.faq summary::after{content:'';margin-top:.6em;width:10px;height:10px;border-right:2px solid #5A6069;border-bottom:2px solid #5A6069;transform:rotate(45deg);transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(-135deg)}
+.faq__a{padding:0 0 1.25rem 2.25rem;font-size:var(--fs-sm);line-height:1.9;color:#5A6069}
+
+/* ── フォーム ── */
+.form{display:grid;gap:1.1rem}
+.fld label{display:block;font-size:var(--fs-sm);font-weight:900;margin-bottom:.4rem;letter-spacing:.02em}
+.req,.opt{display:inline-block;margin-left:.45rem;padding:.06rem .42rem;font-family:var(--f-cond);font-size:.6875rem;font-weight:700;letter-spacing:.08em;vertical-align:.1em}
+.req{background:var(--red);color:#fff}
+.opt{background:var(--steel);color:var(--paper-2)}
+.fld input,.fld select,.fld textarea{
+  width:100%;padding:.9rem 1rem;border:1px solid var(--line);border-radius:0;
+  background:var(--black);color:var(--paper);font-family:inherit;font-size:1rem;line-height:1.6;
+}
+.fld textarea{min-height:110px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--red);outline:none}
+.fld .err{display:none;margin:.35rem 0 0;font-size:var(--fs-sm);color:#FF8577}
+.fld[data-bad="true"] input,.fld[data-bad="true"] select,.fld[data-bad="true"] textarea{border-color:#FF8577}
+.fld[data-bad="true"] .err{display:block}
+.privacy{font-size:var(--fs-sm);line-height:1.8;color:var(--paper-2);margin:0}
+.status{display:none;padding:.9rem 1rem;font-size:var(--fs-sm);line-height:1.8;background:#3A1512;color:#FF9C90}
+.status[data-on]{display:block}
+.done{display:none;text-align:center;padding:2.75rem 1.25rem;background:var(--smoke);border:1px solid var(--line)}
+.done[data-on="true"]{display:block}
+.done__m{width:54px;height:54px;margin:0 auto;background:var(--red);display:grid;place-items:center;color:#fff}
+.done h3{font-weight:900;font-size:var(--fs-h3);margin:1.1rem 0 .5rem}
+.done p{margin:0;font-size:var(--fs-sm);color:var(--paper-2)}
+
+/* ── フッター ── */
+.ft{background:var(--smoke);padding:var(--sect) var(--gut) 2.5rem;border-top:1px solid var(--line)}
+.ft__l{text-align:center;margin-bottom:1.75rem}
+.ft__ja{font-family:var(--f-ja);font-weight:900;font-size:1.4rem;letter-spacing:.14em}
+.ft__en{font-family:var(--f-cond);font-size:.625rem;font-weight:600;letter-spacing:.26em;color:var(--red);margin-top:.3rem}
+.ft__pic{aspect-ratio:4/3;overflow:hidden;margin-bottom:1.75rem}
+.ft__pic img{width:100%;height:100%;object-fit:cover}
+.ft dl{display:grid;grid-template-columns:5.5em 1fr;gap:.5rem 1rem;margin:0 0 2rem;font-size:var(--fs-sm);line-height:1.8}
+.ft dt{color:var(--paper-2)}
+.ft dd{margin:0}
+.ft__cp{font-family:var(--f-cond);font-size:.6875rem;letter-spacing:.14em;text-align:center;color:var(--paper-2);opacity:.6;margin:0}
+
+/* ── 固定バー ── */
+.bar{
+  position:fixed;inset:auto 0 0 0;z-index:40;display:flex;align-items:center;gap:.7rem;
+  padding:.55rem var(--gut);padding-bottom:calc(.55rem + env(safe-area-inset-bottom,0px));
+  background:rgba(13,15,18,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  transform:translateY(115%);transition:transform .28s cubic-bezier(.22,1,.36,1);
+}
+.bar[data-on="true"]{transform:none}
+.bar__p{flex:none;line-height:1.25}
+.bar__p b{display:block;font-family:var(--f-cond);font-size:1.6rem;font-weight:700;color:var(--ember)}
+.bar__p span{font-family:var(--f-cond);font-size:.625rem;font-weight:600;letter-spacing:.1em;color:var(--paper-2)}
+.bar .btn{min-height:54px;font-size:.9375rem}
+@media(min-width:620px){.bar{justify-content:center}.bar .btn{max-width:340px}}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1)}
+.rv[data-in="true"]{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hd__l"><span class="hd__ja">拳心</span><span class="hd__en">KENSHIN BOXING</span></div>
+  <div class="hd__t">6:00 – 24:00<br>年中無休</div>
+</header>
+
+<!-- ════ ヒーロー ════ -->
+<section class="hero">
+  <div class="hero__bg"><img src="./images/hero.svg" alt="" width="1400" height="1700" fetchpriority="high"></div>
+  <div class="hero__in">
+    <span class="hero__kick">未経験 92%／運動ぎらい歓迎</span>
+    <h1 class="hero__ttl">3 Rounds<span>9 Minutes</span></h1>
+    <p class="hero__ja">まず9分だけ、<br>殴ってみませんか。</p>
+    <p class="hero__sub">走らなくていい。腹筋もしなくていい。ミットを3ラウンド打つだけで、はじめての人は全員汗だくになります。続くかどうかは、そのあと考えてください。</p>
+    <ul class="hero__stats">
+      <li><b>1,000<i>円</i></b><span>TRIAL</span></li>
+      <li><b>5<i>分</i></b><span>FROM STATION</span></li>
+      <li><b>18<i>時間</i></b><span>OPEN DAILY</span></li>
+    </ul>
+    <div class="hero__cta"><a class="btn" href="#trial" data-cta="hero">体験を予約する<small>TEBURA OK / 1,000 YEN</small></a></div>
+  </div>
+</section>
+
+<!-- ════ シグネチャー : ラウンドタイマー ════ -->
+<section class="sect" id="rounds">
+  <div class="well rv">
+    <p class="eyebrow">Try it now</p>
+    <h2 class="h2">9分がどれくらいか、<br><em>ここで測ってみて</em>ください。</h2>
+    <p class="lead">3分打って1分休む。これを3回。実際のラウンドと同じ時間で動きます。長いと感じたか、短いと感じたか。それが答えです。</p>
+
+    <div class="timer">
+      <div class="timer__dial">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle class="timer__track" cx="100" cy="100" r="88"/>
+          <circle class="timer__prog" id="prog" cx="100" cy="100" r="88"
+                  stroke-dasharray="552.9" stroke-dashoffset="0"/>
+        </svg>
+        <div class="timer__mid">
+          <span class="timer__ph" id="phase">ROUND</span>
+          <span class="timer__num" id="num">3:00</span>
+          <span class="timer__rd" id="rd">1 / 3</span>
+        </div>
+      </div>
+      <div class="timer__dots" id="dots" aria-hidden="true"><i data-on="true"></i><i></i><i></i></div>
+      <button type="button" class="timer__btn" id="go">Start</button>
+      <p class="timer__cap" id="cap">押すと3分のラウンドが始まります。音は鳴りません。</p>
+    </div>
+    <p class="fine">体験では、この3ラウンドをトレーナーがミットを持って相手をします。サンドバッグに一人で向かうことはありません。</p>
+  </div>
+</section>
+
+<!-- ════ 不安の解除 ════ -->
+<section class="sect sect--smoke" id="fears">
+  <div class="wide rv">
+    <p class="eyebrow">No worries</p>
+    <h2 class="h2">来る前に気になること、<br>だいたいこの4つです。</h2>
+    <div class="fears">
+      <div class="fear"><span class="fear__no">01</span><div><p class="fear__q">殴られるのが怖い</p><p class="fear__a">スパーリングは希望者だけです。会員の約7割は一度もやっていません。体験でも当然ありません。</p></div></div>
+      <div class="fear"><span class="fear__no">02</span><div><p class="fear__q">体力がまったくない</p><p class="fear__a">3分もちません。全員そうです。もたないことを前提にメニューを組んでいるので、途中で止まって大丈夫です。</p></div></div>
+      <div class="fear"><span class="fear__no">03</span><div><p class="fear__q">まわりが強そうで浮きそう</p><p class="fear__a">平日夜の会員は8割が社会人の未経験者です。プロ志望は別の時間帯に分けています。</p></div></div>
+      <div class="fear"><span class="fear__no">04</span><div><p class="fear__q">その場で入会を迫られそう</p><p class="fear__a">体験当日の入会手続きはお受けしていません。一度帰って、決めてから連絡してください。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ トレーナー ════ -->
+<section class="sect" id="coaches">
+  <div class="wide rv">
+    <p class="eyebrow">Trainers</p>
+    <h2 class="h2">教えるのは、<br>この2人です。</h2>
+    <p class="lead">担当は固定制です。毎回違う人に一から説明する必要はありません。</p>
+    <ul class="coaches">
+      <li>
+        <div class="coach__pic"><img src="./images/coach-01.svg" alt="トレーナー 荒木" width="800" height="1000" loading="lazy"></div>
+        <h3 class="coach__n">荒木 亮平<span>RYOHEI ARAKI</span></h3>
+        <p class="coach__r">代表トレーナー／元日本ライト級6位</p>
+        <p class="coach__b">「強くする」より「続けさせる」ほうが難しい。10年やってそう思っています。初回は技術より、息の吸い方だけ覚えて帰ってください。</p>
+      </li>
+      <li>
+        <div class="coach__pic"><img src="./images/coach-02.svg" alt="トレーナー 三宅" width="800" height="1000" loading="lazy"></div>
+        <h3 class="coach__n">三宅 かおり<span>KAORI MIYAKE</span></h3>
+        <p class="coach__r">トレーナー／女性・初心者クラス担当</p>
+        <p class="coach__b">私自身、30歳で運動ゼロから始めました。できない側の気持ちが分かるのが唯一の取り柄です。women only の時間帯も担当しています。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ════ 声 ════ -->
+<section class="sect sect--smoke" id="voices">
+  <div class="wide rv">
+    <p class="eyebrow">Members</p>
+    <h2 class="h2">続いている人の話</h2>
+    <ul class="voices">
+      <li class="voice">
+        <div class="voice__top"><div class="voice__av"><img src="./images/member-01.svg" alt="" width="400" height="400" loading="lazy"></div><div><p class="voice__nm">T.Nさん</p><p class="voice__ag">34 / IT・週2</p></div></div>
+        <p class="voice__h">ジムで初めて1年続いた</p>
+        <p class="voice__b">今まで3つ辞めています。ここが続いたのは、行く日にやることが決まっているからだと思います。考えなくていいのが楽です。</p>
+      </li>
+      <li class="voice">
+        <div class="voice__top"><div class="voice__av"><img src="./images/member-02.svg" alt="" width="400" height="400" loading="lazy"></div><div><p class="voice__nm">M.Hさん</p><p class="voice__ag">41 / 主婦・週1</p></div></div>
+        <p class="voice__h">体重より先に姿勢が変わった</p>
+        <p class="voice__b">半年で4kgなので、痩せ方としては遅いほうだと思います。ただ肩こりがなくなったのと、写真の写り方が変わりました。</p>
+      </li>
+      <li class="voice">
+        <div class="voice__top"><div class="voice__av"><img src="./images/member-03.svg" alt="" width="400" height="400" loading="lazy"></div><div><p class="voice__nm">K.Sさん</p><p class="voice__ag">27 / 営業・週3</p></div></div>
+        <p class="voice__h">仕事のあとに寄れる</p>
+        <p class="voice__b">24時までやっているのが決め手でした。21時に入って30分だけ打って帰る日もあります。それでも文句を言われません。</p>
+      </li>
+    </ul>
+    <p class="fine">個人の感想です。効果や成果を保証するものではありません。</p>
+  </div>
+</section>
+
+<!-- ════ 料金 ════ -->
+<section class="sect sect--paper" id="pricing">
+  <div class="wide rv">
+    <p class="eyebrow">Price</p>
+    <h2 class="h2">入会金・年会費は<br><em>ありません</em>。</h2>
+    <p class="lead">月会費のみです。休会は無料、退会はいつでも当月末で完了します。</p>
+    <ul class="plans">
+      <li class="plan">
+        <h3 class="plan__n">体験</h3><p class="plan__d">3ラウンド＋説明</p>
+        <p class="plan__p">1,000<i>円</i></p>
+        <ul class="plan__f"><li>グローブ・バンテージ貸出</li><li>ウェア・シューズ貸出</li><li>シャワー・タオル</li><li>当日入会は不可</li></ul>
+      </li>
+      <li class="plan plan--on">
+        <span class="plan__flag">MOST CHOSEN</span>
+        <h3 class="plan__n">レギュラー</h3><p class="plan__d">通い放題</p>
+        <p class="plan__p">8,800<i>円／月</i></p>
+        <ul class="plan__f"><li>営業時間内いつでも</li><li>担当トレーナー固定</li><li>初回メニュー作成</li><li>休会いつでも無料</li></ul>
+      </li>
+      <li class="plan">
+        <h3 class="plan__n">ライト</h3><p class="plan__d">月4回まで</p>
+        <p class="plan__p">5,500<i>円／月</i></p>
+        <ul class="plan__f"><li>月4回・繰越なし</li><li>担当トレーナー固定</li><li>上位プランへ変更自由</li></ul>
+      </li>
+    </ul>
+    <p class="fine">表示価格は税込です。ロッカー月額1,100円は任意です。中学生以下は各プランから1,100円引きとなります。</p>
+  </div>
+</section>
+
+<!-- ════ フォーム ════ -->
+<section class="sect" id="trial">
+  <div class="well rv">
+    <p class="eyebrow">Trial</p>
+    <h2 class="h2">体験の予約</h2>
+    <p class="lead">手ぶらで来てください。持ち物はありません。返信は当日中にします。</p>
+
+    <div class="done" id="done" role="status" aria-live="polite">
+      <div class="done__m"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>予約を受け付けました</h3>
+      <p>当日中に、ご記入の電話番号かメールへ連絡します。<br>当日は手ぶらでお越しください。</p>
+    </div>
+
+    <form class="form" id="form" novalidate>
+      <div class="fld" data-f="name"><label for="i-name">お名前<span class="req">必須</span></label><input id="i-name" name="name" type="text" autocomplete="name" placeholder="山田 太郎"><p class="err">お名前を入力してください</p></div>
+      <div class="fld" data-f="tel"><label for="i-tel">電話番号<span class="req">必須</span></label><input id="i-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="09012345678"><p class="err">電話番号を確認してください</p></div>
+      <div class="fld" data-f="email"><label for="i-email">メールアドレス<span class="req">必須</span></label><input id="i-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="example@mail.com"><p class="err">メールアドレスを確認してください</p></div>
+      <div class="fld" data-f="exp"><label for="i-exp">経験<span class="req">必須</span></label>
+        <select id="i-exp" name="experience"><option value="">選んでください</option><option>まったくの未経験</option><option>他のジムで少し</option><option>経験あり・ブランクあり</option><option>現役で続けている</option></select>
+        <p class="err">選択してください</p>
+      </div>
+      <div class="fld"><label for="i-date">希望日時<span class="opt">任意</span></label><input id="i-date" name="preferredDate" type="datetime-local"></div>
+      <div class="fld"><label for="i-msg">聞いておきたいこと<span class="opt">任意</span></label><textarea id="i-msg" name="message" placeholder="不安なことがあれば書いてください"></textarea></div>
+      <input type="hidden" name="pageUrl" id="i-url">
+      <div class="sr" aria-hidden="true"><label for="i-hp">入力しないでください</label><input id="i-hp" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+      <p class="status" id="status" role="alert"></p>
+      <button type="submit" class="btn" data-cta="form">この内容で予約する<small>REPLY WITHIN THE DAY</small></button>
+      <p class="privacy">ご記入いただいた情報は、体験のご連絡にのみ使用します。しつこい勧誘の電話はいたしません。</p>
+    </form>
+  </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section class="sect sect--paper" id="faq">
+  <div class="well rv">
+    <p class="eyebrow">FAQ</p>
+    <h2 class="h2">よくある質問</h2>
+    <div class="faq">
+      <details><summary>本当に手ぶらでいいですか。</summary><div class="faq__a">はい。グローブ、バンテージ、ウェア、シューズ、タオルはすべて貸出します。汗をかくので、着替えの下着だけ持ってきていただけると快適です。</div></details>
+      <details><summary>女性一人でも行けますか。</summary><div class="faq__a">会員の約4割が女性です。平日13:00–16:00は women only の時間帯で、三宅が常駐しています。更衣室とシャワーは男女別です。</div></details>
+      <details><summary>40代・50代でも大丈夫ですか。</summary><div class="faq__a">最年長の会員は68歳です。心臓・血圧・関節に不安がある方は、事前に医師へご相談のうえお越しください。当日、無理のない範囲に調整します。</div></details>
+      <details><summary>駐車場はありますか。</summary><div class="faq__a">専用駐車場はありませんが、提携のコインパーキングが2軒隣にあり、会員は2時間無料になります。駐輪場は無料です。</div></details>
+      <details><summary>退会はしにくいですか。</summary><div class="faq__a">受付で紙を1枚書くだけで、当月末に完了します。理由は聞きません。引き止めもしません。休会は月額0円で最長6ヶ月まで使えます。</div></details>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="well">
+    <div class="ft__l"><div class="ft__ja">拳心</div><div class="ft__en">KENSHIN BOXING GYM</div></div>
+    <div class="ft__pic"><img src="./images/gym-01.svg" alt="ジム内" width="1000" height="750" loading="lazy"></div>
+    <dl>
+      <dt>所在地</dt><dd>兵庫県尼崎市神田中通3-1-1 拳心ビル2F</dd>
+      <dt>アクセス</dt><dd>阪神 尼崎駅 北口 徒歩5分</dd>
+      <dt>電話</dt><dd>06-1234-5678</dd>
+      <dt>営業時間</dt><dd>6:00–24:00（最終受付 23:00）</dd>
+      <dt>定休日</dt><dd>年中無休（年末年始を除く）</dd>
+    </dl>
+    <p class="ft__cp">© KENSHIN BOXING GYM — 架空クライアントによる制作サンプルです</p>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <div class="bar__p"><b>¥1,000</b><span>TRIAL / TEBURA OK</span></div>
+  <a class="btn" href="#trial" data-cta="bar">体験を予約する</a>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var track=function(n,p){if(typeof window.gtag==='function')window.gtag(n,p||{});};
+
+  /* ── ラウンドタイマー ────────────────────────────────
+     3分ラウンド ×3、間に1分インターバル。
+     setInterval のドリフトを避けるため、経過時間は
+     Date.now() の差分から毎回算出する。                */
+  var ROUND=180, REST=60, TOTAL=3, C=2*Math.PI*88;
+  var prog=document.getElementById('prog'), num=document.getElementById('num'),
+      phEl=document.getElementById('phase'), rdEl=document.getElementById('rd'),
+      go=document.getElementById('go'), cap=document.getElementById('cap'),
+      dots=[].slice.call(document.querySelectorAll('#dots i'));
+  var timer=null, startAt=0, seg=null, round=1, phase='round';
+
+  function fmt(s){var m=Math.floor(s/60),x=Math.floor(s%60);return m+':'+(x<10?'0':'')+x;}
+  function paint(left,total){
+    num.textContent=fmt(Math.ceil(left));
+    prog.setAttribute('stroke-dashoffset',String(C*(1-left/total)));
+    prog.setAttribute('data-phase',phase);
+    phEl.setAttribute('data-phase',phase);
+    phEl.textContent=phase==='round'?'ROUND':'REST';
+    rdEl.textContent=round+' / '+TOTAL;
+    dots.forEach(function(d,i){d.setAttribute('data-on',String(i<round));});
+  }
+  function stop(msg){
+    clearInterval(timer);timer=null;go.textContent='Start';
+    round=1;phase='round';seg=ROUND;paint(ROUND,ROUND);
+    cap.textContent=msg||'押すと3分のラウンドが始まります。音は鳴りません。';
+  }
+  function tick(){
+    var left=seg-(Date.now()-startAt)/1000;
+    if(left<=0){
+      if(phase==='round'){
+        if(round===TOTAL){track('timer_complete');stop('9分、終わりました。実際はこの間ずっと打っています。');return;}
+        phase='rest';seg=REST;
+      }else{ round++;phase='round';seg=ROUND; }
+      startAt=Date.now();left=seg;
+      cap.textContent=phase==='rest'?'1分休みます。ここで水を飲みます。':'ラウンド'+round+'。ここから3分です。';
+    }
+    paint(left,seg);
+  }
+  go.addEventListener('click',function(){
+    if(timer){stop();return;}
+    seg=(phase==='round')?ROUND:REST;startAt=Date.now();
+    go.textContent='Stop';cap.textContent='ラウンド1。ここから3分です。';
+    track('timer_start');
+    tick();timer=setInterval(tick,200);
+  });
+  paint(ROUND,ROUND);
+
+  /* ── 固定バー ── */
+  var bar=document.getElementById('bar'),hero=document.querySelector('.hero'),tr=document.getElementById('trial');
+  function tb(){
+    var p=hero.getBoundingClientRect().bottom<0,
+        a=tr.getBoundingClientRect().top<window.innerHeight*0.85;
+    bar.setAttribute('data-on',(p&&!a)?'true':'false');
+  }
+  tb();window.addEventListener('scroll',tb,{passive:true});window.addEventListener('resize',tb,{passive:true});
+
+  /* ── 表出 ── */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.setAttribute('data-in','true');io.unobserve(e.target);}});},
+    {rootMargin:'0px 0px -12% 0px'});
+  [].slice.call(document.querySelectorAll('.rv')).forEach(function(el){io.observe(el);});
+
+  [].slice.call(document.querySelectorAll('[data-cta]')).forEach(function(el){
+    el.addEventListener('click',function(){track('cta_click',{position:el.dataset.cta});});});
+
+  /* ── フォーム ── */
+  var form=document.getElementById('form'),st=document.getElementById('status'),done=document.getElementById('done'),started=false;
+  form.addEventListener('input',function(){if(!started){started=true;track('form_start');}});
+  function bad(n,is){var f=form.querySelector('[data-f="'+n+'"]');if(f)f.setAttribute('data-bad',String(is));}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type=submit]'),fd=new FormData(form),d={};
+    fd.forEach(function(v,k){d[k]=String(v);});d.pageUrl=location.href;
+    var ok=true;
+    [['name',d.name.trim().length>0],
+     ['tel',/^[0-9+\-() ]{10,}$/.test(d.tel.trim())],
+     ['email',/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email.trim())],
+     ['exp',d.experience.trim().length>0]
+    ].forEach(function(p){bad(p[0],!p[1]);if(!p[1])ok=false;});
+    if(!ok){var f=form.querySelector('[data-bad="true"] input,[data-bad="true"] select');if(f)f.focus();return;}
+    btn.disabled=true;btn.textContent='送信中…';st.removeAttribute('data-on');
+    fetch('/api/trials',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){if(!r.ok)throw 0;
+        track('form_submit',{experience:d.experience});
+        form.style.display='none';done.setAttribute('data-on','true');
+        done.scrollIntoView({behavior:'smooth',block:'center'});})
+      .catch(function(){
+        st.setAttribute('data-on','');st.textContent='送信できませんでした。お手数ですが 06-1234-5678 までお電話ください。';
+        btn.disabled=false;btn.textContent='この内容で予約する';});
+  });
+})();
+</script>
+</body>
+</html>

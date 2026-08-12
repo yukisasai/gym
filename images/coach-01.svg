@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="実写差し替え" preserveAspectRatio="xMidYMid slice">
+<defs></defs>
+
+  <rect width="800" height="1000" fill="#171B21"/>
+  <rect x="24" y="24" width="752" height="952"
+        fill="none" stroke="#E8392B" stroke-width="4" stroke-dasharray="24 16" opacity=".6"/>
+  <circle cx="400" cy="428" r="88" fill="#F2F0EB" opacity=".16"/>
+  <path d="M 240 660 a 160 144 0 0 1 320 0 z" fill="#F2F0EB" opacity=".16"/>
+  <text x="400" y="748" text-anchor="middle" font-family="'Hiragino Sans',sans-serif"
+        font-size="41.6" font-weight="600" fill="#F2F0EB" fill-opacity=".55">実写差し替え</text>
+  <text x="400" y="804" text-anchor="middle" font-family="'Hiragino Sans',sans-serif"
+        font-size="30.4" fill="#F2F0EB" fill-opacity=".38">トレーナー / 全身</text>
+  <text x="400" y="868" text-anchor="middle" font-family="'Jost',sans-serif"
+        font-size="27.200000000000003" letter-spacing="11.200000000000001" fill="#F2F0EB" fill-opacity=".3">800 × 1000</text>
+</svg>
